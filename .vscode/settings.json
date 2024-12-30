@@ -1,0 +1,12 @@
+{  
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"dotnet.defaultSolution": "backend/Web.Api.sln",
+	"omnisharp.organizeImportsOnFormat": true,
+	"dotnet.server.useOmnisharp": true,
+	"editor.tabSize": 2,
+	"eslint.workingDirectories": ["./"],
+	"editor.wordWrap": "on",
+	"editor.formatOnSave": true,
+}
