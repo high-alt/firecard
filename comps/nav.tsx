@@ -69,12 +69,11 @@ const Nav: React.FC<Props> = (props: Props) => {
         }
       >
         <Button
-          className="flex justify-between w-full hover:bg-primary-dark/90"
+          className="flex justify-between "
           href={l.path}
         >
-          <span className="flex justify-between w-full mx-4 md:w-[120px]">
+          <span className="mx-4">
             {l.label}
-            <Icon>{l.icon}</Icon>
           </span>
         </Button>
       </li>
@@ -104,7 +103,7 @@ const Nav: React.FC<Props> = (props: Props) => {
               </Link>
             )}
             <div className="hidden md:flex ">
-              {links("w-[164px] text-center")}
+              {links("text-center")}
             </div>
             <div className="flex items-center space-x-2 ">
               <div className="hidden md:block">
@@ -181,7 +180,7 @@ export const BottomNav: React.FC<Props> = (props: Props) => {
     setValue(newValue)
   }
   return (
-    <div className="fixed bottom-0 left-0 w-full md:hidden shadow-t-md ">
+    <div className="absolute bottom-0 left-0 w-full shadow-t-md ">
       <BottomNavigation
         className="border-t-[1px] border-gray-200"
         value={value}

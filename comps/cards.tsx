@@ -253,23 +253,3 @@ export const FlexCard = (props: CardProps) => {
     </Link>
   )
 }
-
-export const MessageCard = (props: CardProps) => {
-  return(<div
-    onClick={props.onClick}
-    className={"cursor-pointer bg-white pb-4 space-y-2 flex flex-col items-center h-full w-full overflow-hidden rounded-[16px] "  + props.className}
-  >
-    <Img
-      secondaryProps={{className:"hover:border-solid rounded-[16px]"}}
-      {...props.img}
-    />
-    <div className="flex flex-col w-full h-full p-4 my-auto  mb-2 rounded-[16px] space-y-4">
-      <div className="flex flex-col text-gray-700 cursor-pointer">
-        <h2 className={"cursor-pointer t-h5 hover:text-black-light"}>
-          {props.header}
-        </h2>
-        <p>{props.subheader}</p>
-      </div>
-    </div>
-  </div>)
-}

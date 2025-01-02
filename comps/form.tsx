@@ -1,11 +1,12 @@
 'use client'
-import { Checkbox, FormControl, FormControlLabel, FormHelperText, FormHelperText, Input, InputLabel, MenuItem, Select, SelectChangeEvent, Switch, TextField } from '@mui/material';
-import { Field, Formik } from 'formik';
-import React, { FormEvent, useCallback, useMemo, useState } from 'react'
+import { Checkbox, FormControl, FormControlLabel, Input, InputLabel, MenuItem, Select, SelectChangeEvent, Switch, TextField } from '@mui/material';
+import { Field, Formik } from 'formik'
+import React, { FormEvent, Fragment, useCallback, useMemo, useState } from 'react'
 import Button from './button';
-import { createForm, getForm, useQ } from 'app/api';
-import { addressFormConfig } from 'utils/forms';
+import { createForm, getForm, useQ } from 'app/api'
+import { addressFormConfig } from 'utils/forms'
 import { FormElement, FormFieldTypeOld, Form } from 'utils/types';
+import { useQuery } from '@tanstack/react-query';
 
 type Props = {
   field: FormElement
@@ -106,7 +107,7 @@ export const DynamicForm = ({fields}: DynamicFormProps) => {
   const [formFields, setFormFields] = useState<FormElement[]>()
   const [form, setForm] = useState<Form>()
 
-  const {data} = useQ(getForm, ["asD"])
+  const {data} = useQuery({queryFn: getForm, queryKey: ["asD"]})
 
   const handleFieldChange = (fieldName: string, value: any) => {
   }

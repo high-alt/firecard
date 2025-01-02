@@ -3,11 +3,11 @@ import React, { useRef, useState } from "react"
 import "filepond/dist/filepond.min.css"
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
 import { FancyIcon } from "./icons"
-import { PresignedRequestParams, getPresign } from "app/api"
 import Button from "comps/button"
 import UploadIcon from "@mui/icons-material/Upload"
 import GraphicEqIcon from "@mui/icons-material/GraphicEq"
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo"
+import { FileInput } from "./file-input"
 
 const Uploader = () => {
   const [path, setPath] = useState<string>("user-id")

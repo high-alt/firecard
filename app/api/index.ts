@@ -1,25 +1,8 @@
 import {
-  MutationFunction,
-  QueryKey,
-  UseMutationOptions,
-  UseMutationResult,
-  UseQueryOptions,
-  UseQueryResult,
-  useMutation,
-  useQuery,
-} from "@tanstack/react-query"
-import Cookies from "js-cookie"
-import {
-  AWSTranscribeOutput,
   Form,
   FormFieldTypeOld,
   GetPresignType,
 } from "utils/types"
-import stripe from "@stripe/react-stripe-js"
-import { MemoIteratorCapped } from "lodash"
-import PreviousMap from "postcss/lib/previous-map"
-import { headers } from "next/headers"
-
 type FetcherFn<T, P extends any[]> = (...params: P) => Promise<T>
 
 export type BadRequestType = {
@@ -35,7 +18,7 @@ export const fetchFn = async <T>(
   path?: string,
   init?: RequestInit
 ): Promise<T> => {
-  const token = Cookies.get("token")
+  const token = null
   console.log("got here")
   const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `${path}`, {
     method: init?.method ?? "GET",
@@ -65,34 +48,31 @@ export const fetchFn = async <T>(
   throw new Error("something went wrong")
 }
 
-export function useQ<T, P extends any[] = any[]>(
-  fetchFn: FetcherFn<T, P>,
-  params?: P,
-  options?: Omit<
-    UseQueryOptions<T, unknown, T, (string | P[number])[]>,
-    "initialData" | "queryFn" | "queryKey"
-  > & { initialData?: (() => undefined) | undefined }
-): UseQueryResult<T> {
-  const p = params ?? ([] as unknown as P)
-  const fetcher = async () => {
-    try {
-      const data = await fetchFn(...p)
-      return data
-    } catch (error) {
-      throw new Error("Fetching failed")
-    }
-  }
+// export function useQ<T, P extends any[] = any[]>(
+//   fetchFn: FetcherFn<T, P>,
+//   params?: P,
+//   options?: Omit< UseQueryOptions<T, unknown, T, (string | P[number])[]>, "initialData" | "queryFn" | "queryKey"> & { initialData?: (() => undefined) | undefined }
+// ): UseQueryResult<T> {
+//   const p = params ?? ([] as unknown as P)
+//   const fetcher = async () => {
+//     try {
+//       const data = await fetchFn(...p)
+//       return data
+//     } catch (error) {
+//       throw new Error("Fetching failed")
+//     }
+//   }
 
-  const queryKey = [fetchFn.name, ...p]
-  return useQuery(queryKey, fetcher, options)
-}
+//   const queryKey = [fetchFn.name, ...p]
+//   return useQuery({queryKey, queryFn: fetcher, ...options})
+// }
 
-export function useM<T, P extends any>(
-  mutateFn: MutationFunction<T, P>,
-  options?: UseMutationOptions<T, unknown, P, unknown>
-): UseMutationResult<T, unknown, P, unknown> {
-  return useMutation(mutateFn, options)
-}
+// export function useM<T, P extends>(
+//   mutateFn: MutationFunction<T, P>,
+//   options?: UseMutationOptions<T, unknown, P, unknown>
+// ): UseMutationResult<T, unknown, P, unknown> {
+//   return useMutation(mutateFn, options)
+// }
 
 export enum HttpVerb {
   GET = "GET",
@@ -172,13 +152,6 @@ export const uploadToS3 = async (data: {
   }
 
   return "File uploaded successfully!"
-}
-
-export const fetchTranscription = async (
-  url: string
-): Promise<AWSTranscribeOutput> => {
-  const response = await fetch(url)
-  return await response.json()
 }
 
 export const getPayment = async () => {

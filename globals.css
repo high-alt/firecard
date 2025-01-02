@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+body {
+}
+
+li {
+  list-style: none;
+}
+
+.slick-list {
+  margin: 0 -7px;
+  & .slick-slide > div {
+    padding: 0 5px;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@layer components {
+  .t-balance {
+    @apply text-[32px] lg:text-[64px] font-[800] leading-[0.9];
+  }
+  .t-h1 {
+    @apply text-4xl font-[800];
+  }
+  .t-h2 {
+    @apply text-3xl font-[800];
+  }
+  .t-h3 {
+    @apply text-2xl font-[800];
+  }
+  .t-h4 {
+    @apply text-xl  font-[700];
+  }
+  .t-h5 {
+    @apply text-lg  font-[700];
+  }
+  .t-sm {
+    @apply text-sm text-black;
+  }
+  .t-link {
+    @apply text-xs uppercase font-semibold text-charcoal hover:underline hover:decoration-primary underline-offset-4 decoration-2 tracking-wide;
+  }
+  .t-button {
+    @apply text-xs uppercase font-semibold hover:underline group-hover:underline underline-offset-2 decoration-2 tracking-wide group-hover:text-black;
+  }
+  .cont {
+    @apply w-full max-w-[980px] mx-auto;
+  }
+  .lg-cont {
+    @apply cont lg:max-w-[1400px] lg:px-2;
+  }
+}
