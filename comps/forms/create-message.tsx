@@ -6,6 +6,7 @@ import { FileInput } from 'comps/file-input';
 import FontSelector from 'comps/font-selector';
 import React, { useState } from 'react'
 import { Roboto, Open_Sans, Lora, Montserrat, Poppins, Playfair_Display, Oswald, Merriweather, Raleway, Nunito, Happy_Monkey } from 'next/font/google'
+import { GiphyFetch } from '@giphy/js-fetch-api';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['400', '700'] });
 const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '700'] });
@@ -69,6 +70,13 @@ export const CreateMessage = (props: Props) => {  const [message, setMessage] = 
     setMedia(null)
     setFont("default")
   };
+
+  // use @giphy/js-fetch-api to fetch gifs, instantiate with your api key
+  const gf = new GiphyFetch(process.env.NEXT_PUBLIC_GIPHY_API_KEY ?? '')
+
+  // configure your fetch: fetch 10 gifs at a time as the user scrolls (offset is handled by the grid)
+  const fetchGifs = (offset: number) => gf.trending({ offset, limit: 10 })
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4 p-4 mx-auto border-solid rounded-md border">
       <div className='space-y-2'>
@@ -94,7 +102,6 @@ export const CreateMessage = (props: Props) => {  const [message, setMessage] = 
             onClose={handleClose}>
             {fonts.map((font) => (
               <MenuItem
-              
                 key={font.name}
                 onClick={() => handleSelect(font)}
                 className={`${font.className}`}

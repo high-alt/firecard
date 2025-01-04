@@ -9,6 +9,7 @@ import { links } from 'utils/routes'
 import SendIcon from '@mui/icons-material/Send'
 import AddIcon from '@mui/icons-material/AddCircleOutlined'
 import { CreateMessage } from 'comps/forms/create-message'
+import { GiphyFetch } from '@giphy/js-fetch-api'
 
 type Props = {}
 const heights = [150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80]
@@ -29,6 +30,7 @@ const testMessageCardArray: MessageCardProps[] = [
   {name: "chicken", message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laudantium reprehenderit quia sed hic, architecto asperiores cum deleniti nihil voluptates?"}
 ]
 export default(props: Props) => {
+  
   return (
     <div className='space-y-8 bg-white px-4 relative '>
       <h1 className='t-balance'>Example page</h1>
