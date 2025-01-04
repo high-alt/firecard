@@ -22,7 +22,7 @@ const Img: React.FC<MediaImgProps> = ({
   secondaryProps,
 }: MediaImgProps) => {
   return (
-    <figure className={className}>
+    <figure className={'w-full' + ' ' + className}>
       <picture>
         {sources &&
           sources.map((source, index) => (

@@ -1,5 +1,6 @@
 import {
   HTMLInputTypeAttribute,
+  JSX,
   forwardRef,
   useCallback,
   useRef,
@@ -10,6 +11,7 @@ import { CloseRounded, UploadFile } from "@mui/icons-material"
 import Img from "./media-img"
 import { IconButton } from "@mui/material"
 import { HttpVerb, addMedia } from "app/api"
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 
 type Props = JSX.IntrinsicElements["input"] & {}
 
@@ -48,24 +50,32 @@ export const FileInput = (props: Props) => {
     []
   )
 
+  const handleRemoveFile = () => {
+    setFile(undefined)
+    setImg(undefined);
+    if (ref.current) {
+      ref.current.value = ""
+    }
+  }
+
   return (
-    <div className="relative space-y-4 group">
+    <div className={"relative space-y-4 group"}>
       {file && img && (
         <>
-          <IconButton className="absolute top-8 right-2 ">
+          <IconButton onClick={handleRemoveFile} className="absolute top-8 right-2 ">
             <CloseRounded />
           </IconButton>
           <Img
-            className="w-[180px] cursor-pointer"
-            secondaryProps={{ className: "rounded-[16px]" }}
+            className="max-w-[180px] cursor-pointer"
+            secondaryProps={{ className: "rounded-[16px] w-[180px]" }}
             src={img}
             alt={file.name}
             caption={file.name}
           />
         </>
       )}
-      <Button startIcon={<UploadFile />} component="label" onClick={fileChange}>
-        Upload file
+      <Button startIcon={<AddPhotoAlternateIcon />} component="label" className="w-full" onClick={fileChange}>
+        Upload photo
       </Button>
       <input
         {...props}
