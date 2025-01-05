@@ -8,8 +8,8 @@ export const routes = [
 ]
 
 export const links: LinkType[] = [
-  { label: "How it works", path: "/how-it-works", icon: "whatshot_outlined" },
-  { label: "Home", path: "/", icon: "add_circle_outlined" },
+  { label: "How it works", path: "/how-it-works", },
+  { label: "Home", path: "/", },
   {
     label: "Notifications",
     path: "/notifications",

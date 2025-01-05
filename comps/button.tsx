@@ -16,7 +16,6 @@ export default forwardRef<HTMLButtonElement, Props>((props, ref) => {
           : props.variant
       }
       component={!!props.href ? "div" : "button"}
-      className={props.className}
       {...props}
     >
       {props.children}

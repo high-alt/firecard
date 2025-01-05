@@ -34,7 +34,7 @@ export default(props: Props) => {
   return (
     <div className='space-y-8 bg-white px-4 relative '>
       <h1 className='t-balance'>Example page</h1>
-      <div className='w-full rounded-md shadow-sm bg-primary-light flex justify-center'>
+      <div className='w-full rounded-md border p-2 flex justify-center'>
         <div className='px-4 flex justify-center bg-white space-x-2'>
           <Button className='space-x-2'><AddIcon /> <span>Create a message</span></Button>
           <Button variant='outlined'>Create a message</Button>

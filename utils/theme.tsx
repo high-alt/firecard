@@ -33,7 +33,6 @@ const theme = createTheme({
       variants: [{
         props: {variant: 'link'},
         style: {
-          backgroundColor: '#3a3a3a16',
           height: 'auto',
           borderRadius: '32px',
           fontSize: '0.75rem',
@@ -50,7 +49,7 @@ const theme = createTheme({
           fontSize: '0.95rem',
           fontWeight: 500,
           ':hover': {
-            backgroundColor:darken(colours.primary.DEFAULT, 0.08),
+            backgroundColor:darken(colours.primary.DEFAULT, 0.02),
             textDecoration: 'underline',
             textDecorationLine: '1px',
             textDecorationThickness: '1.2px',
@@ -58,7 +57,7 @@ const theme = createTheme({
           },
         },
         containedPrimary: {
-          color: colours.white.DEFAULT,
+          color: colours.black.DEFAULT,
           ':hover': {},
           ':disabled': {
             color: colours.white.DEFAULT,
@@ -117,9 +116,20 @@ const theme = createTheme({
     MuiInput: {
       styleOverrides: {
         root: {
-          '&:focus': {
-            outline: 'none',
-            boxShadow: 'none',
+          '&.MuiInput-root': {
+            '&:before': {
+              borderBottom: 'none', // Removes the default bottom line
+            },
+            '&:hover:not(.Mui-disabled):before': {
+              borderBottom: 'none', // Removes the hover bottom line
+            },
+            '&:after': {
+              borderBottom: 'none', // Removes the focus bottom line
+            },
+            '&:focus': {
+              outline: 'none',
+              boxShadow: 'none', // Ensures no outline or shadow on focus
+            },
           },
         },
       },

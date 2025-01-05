@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 
 export const colours = {
   primary: {
-    DEFAULT: "#ff8100",
+    DEFAULT: "#bdb2ff",
     light: "#ff5733",
     dark: "#cc6700",
   },
@@ -86,6 +86,7 @@ export const colours = {
 
 
 export default {
+  important: '#parent',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./comps/**/*.{js,ts,jsx,tsx,mdx}",
