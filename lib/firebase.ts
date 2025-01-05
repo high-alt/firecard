@@ -1,8 +1,7 @@
-import { getAnalytics } from 'firebase/analytics'
 import {  FirebaseOptions, initializeApp } from 'firebase/app'
 
 const firebaseConfig: FirebaseOptions = {
-  apiKey: "AIzaSyDtyWunqtWQ6yIUIyP8Bs877stsYxjNOWY",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: "firecard.firebaseapp.com",
   projectId: "firecard",
   storageBucket: "firecard.firebasestorage.app",
