@@ -25,7 +25,7 @@ export const MessageCard = (props: MessageCardProps) => {
       <div className=" w-full p-4 mb-2 space-y-4 bg-white">
         <div className="text-gray-700 cursor-pointer space-y-2">
           <p style={{fontFamily: props.font.name}}>{props.message}</p>
-          <span className={"flex w-full justify-end cursor-pointer t-sm "} style={{fontFamily: props.font.name}}>
+          <span className={"flex w-full justify-end cursor-pointer "} style={{fontFamily: props.font.name}}>
             {props.name}
           </span>
         </div>
