@@ -16,7 +16,7 @@ export const Pg = (props: Props) => {
   const [auth, setAuth] = React.useState(true)
   return (
     <>
-      <div className={'cont ' + props.className ?? ''}>
+      <div className={'cont ' + props.className ? props.className : ''}>
         {props.children}
       </div>
     </>

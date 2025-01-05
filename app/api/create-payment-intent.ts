@@ -1,7 +1,7 @@
 import { LineItem, PaymentIntent } from '@stripe/stripe-js';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { NextRequest, NextResponse } from 'next/server';
-import Stripe from 'stripe';
+import Stripe from 'stripe'
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_TESTSECRET ?? '')
 
 interface TaxCalculation {

@@ -5,7 +5,6 @@ import React, { useState } from "react"
 import { authLinks } from "utils/routes"
 import { LinkType } from "utils/types"
 import Button from "./button"
-import Cookies from "js-cookie"
 import { useRouter } from "next/router"
 
 type Props = {
