@@ -3,8 +3,8 @@ import type { Config } from "tailwindcss";
 export const colours = {
   primary: {
     DEFAULT: "#bdb2ff",
-    light: "#ff5733",
-    dark: "#cc6700",
+    light: "#9696C0",
+    dark: "#6C6CA7",
   },
   secondary: {
     DEFAULT: "#33A1FF",

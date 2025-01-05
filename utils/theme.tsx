@@ -1,5 +1,5 @@
 import 'globals.css'
-import { createTheme, darken } from '@mui/material/styles'
+import { createTheme, darken, lighten } from '@mui/material/styles'
 import { colours } from '../tailwind.config'
 import { Noto_Sans } from 'next/font/google'
 
@@ -49,7 +49,6 @@ const theme = createTheme({
           fontSize: '0.95rem',
           fontWeight: 500,
           ':hover': {
-            backgroundColor:darken(colours.primary.DEFAULT, 0.02),
             textDecoration: 'underline',
             textDecorationLine: '1px',
             textDecorationThickness: '1.2px',
@@ -58,7 +57,9 @@ const theme = createTheme({
         },
         containedPrimary: {
           color: colours.black.DEFAULT,
-          ':hover': {},
+          ':hover': {
+            backgroundColor:darken(colours.primary.DEFAULT, 0.1),
+          },
           ':disabled': {
             color: colours.white.DEFAULT,
             backgroundColor: colours.primary.DEFAULT,
@@ -66,6 +67,9 @@ const theme = createTheme({
           },
         },
         outlinedPrimary: {
+          ':hover': {
+            backgroundColor:lighten(colours.primary.DEFAULT, 0.8),
+          },
           backgroundColor: colours.white.DEFAULT,
           color: colours.black.DEFAULT,
         },
