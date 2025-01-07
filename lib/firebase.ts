@@ -6,7 +6,7 @@ const firebaseConfig: FirebaseOptions = {
   projectId: "firecard",
   storageBucket: "firecard.firebasestorage.app",
   messagingSenderId: "956581215227",
-  appId: "AIzaSyDtyWunqtWQ6yIUIyP8Bs877stsYxjNOWY"
+  appId: "1:956581215227:web:b01c4663145bdb722ca95e"
 }
 
 const app = initializeApp(firebaseConfig)
