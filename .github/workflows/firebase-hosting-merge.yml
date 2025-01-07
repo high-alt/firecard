@@ -11,17 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
-           
       # Step 5: Install dependencies for Firebase Functions
-      - name: Install functions dependencies
+      - name: Build and install functions dependencies
         working-directory: functions
-        run: npm ci
-    
-          # Step 6: Build Firebase Functions (TypeScript)
-      - name: Build Firebase Functions
-        working-directory: functions
-        run: npm run build
+        run: npm ci && npm run build
+      
+      - name: Install root dependencies   
+        run: npm ci && npm run build
         
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
