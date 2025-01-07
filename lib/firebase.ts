@@ -1,12 +1,12 @@
 import {  FirebaseOptions, initializeApp } from 'firebase/app'
 
 const firebaseConfig: FirebaseOptions = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  apiKey: "AIzaSyDtyWunqtWQ6yIUIyP8Bs877stsYxjNOWY",
   authDomain: "firecard.firebaseapp.com",
   projectId: "firecard",
   storageBucket: "firecard.firebasestorage.app",
   messagingSenderId: "956581215227",
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
+  appId: "AIzaSyDtyWunqtWQ6yIUIyP8Bs877stsYxjNOWY"
 }
 
 const app = initializeApp(firebaseConfig)
