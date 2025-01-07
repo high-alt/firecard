@@ -14,12 +14,12 @@ export default (props: Props) => {
   return (
     <section
       className={
-        "lg:flex min-h-auto overflow-hidden h-full max-w-[1800px] mx-auto relative w-full text-0 lg:bg-primary-light/5"
+        "lg:flex min-h-auto overflow-hidden h-full max-w-[1800px] mx-auto relative w-full text-0"
       }
     >
       <div className="w-full flex flex-col my-auto items-center lg:w-[50%] h-full p-4">
         <section className="max-w-[500px] space-y-8 ">
-          <h2 className={"t-balance text-secondary"}>{props.header}</h2>
+          <h2 className={"t-balance text-primary-dark"}>{props.header}</h2>
           <p>{props.subheader}</p>
           <div>
             <Button variant="text" href="#desc">

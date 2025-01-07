@@ -1,5 +1,5 @@
-import { PriceCard, PromoCard } from "comps/cards";
-import Hero from "comps/hero";
+import { PriceCard, PromoCard } from "comps/cards"
+import Hero from "comps/hero"
 
 export default function Home(){
   return(
