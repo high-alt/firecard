@@ -14,11 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build and install functions dependencies
-        working-directory: functions
+      - name: Install root dependencies   
         run: npm ci && npm run build
 
-      - name: Install root dependencies   
+      - name: Build and install functions dependencies
+        working-directory: functions
         run: npm ci && npm run build
 
             
