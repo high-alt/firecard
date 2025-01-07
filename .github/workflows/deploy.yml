@@ -9,30 +9,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the code
+      # Step 1: Checkout code
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      # Step 2: Set up Node.js for the root directory (Next.js)
+      - name: Set up Node.js for Next.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '21'  # or whichever version you're using
+          node-version: '21'  # Use your Node.js version here
+
+      - name: Install Next.js dependencies
+        run: npm ci
 
       - name: Build Next.js app
-        run: npm ci && npm run build
+        run: npm run build
 
-      - name: Install functions dependencies
+      # Step 3: Install Firebase Functions dependencies
+      - name: Install Firebase Functions dependencies
         run: cd functions && npm ci
-        
-      - name: Build Firebase Functions
-        run: cd functions && npm run build
 
-      # Step 6: Deploy to Firebase
-      - name: Deploy to Firebase
+      # Step 4: Deploy Firebase Functions
+      - name: Deploy Firebase Functions
+        run: cd functions && firebase deploy --only functions
+
+      # Step 5: Deploy Firebase Hosting
+      - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FIRECARD }}  # Your Firebase service account key (see step below)
-          channelId: live  # The deployment channel (live for production, staging for a staging environment)
+          channelId: live  # Deployment channel
           projectId: firecard  # Your Firebase project ID
