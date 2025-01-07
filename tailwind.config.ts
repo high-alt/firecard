@@ -2,15 +2,15 @@ import type { Config } from "tailwindcss";
 
 export const colours = {
   primary: {
-    DEFAULT: "#bdb2ff",
-    light: "#9696C0",
-    dark: "#6C6CA7",
+    DEFAULT: "#feee00",
+    light: "#fffd5d",
+    dark: "#fcd116",
   },
   secondary: {
-    DEFAULT: "#33A1FF",
+    DEFAULT: "#df00ff",
   },
   accent: {
-    DEFAULT: "#ff33a1",
+    DEFAULT: "#5bc0eb",
   },
   midnight: {
     DEFAULT: "#1A2138",
