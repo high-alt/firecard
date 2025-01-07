@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: '21'  # or whichever version you're using
 
+      - name: Build Next.js app
+        run: npm run build
+
       - name: Install functions dependencies
         run: cd functions && npm ci
         
