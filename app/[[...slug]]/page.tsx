@@ -17,7 +17,7 @@ export default function Home(){
           header={<>this is a header</>}
           subheader={
             <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum, more dolor sit amet consectetur adipisicing elit.
             Repellat reprehenderit non possimus nam, iste libero maxime a
             asperiores aut nisi? derit non possimus nam, iste libero maxime
             a asper asperiores
