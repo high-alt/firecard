@@ -20,7 +20,7 @@ export default function Home(){
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Repellat reprehenderit non possimus nam, iste libero maxime a
             asperiores aut nisi? derit non possimus nam, iste libero maxime
-            a asper
+            a asper asperiores
             </p>
           }
           img={{
