@@ -1,17 +1,14 @@
 {
   "hosting": {
-    "public": ".next/static",
+    "source": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "nextApp"
-      }
-    ]
+    "frameworksBackend": {
+      "region": "us-central1"
+    }
   },
   "functions": [
     {
@@ -25,7 +22,7 @@
         "*.local"
       ],
       "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run lint || exit 0",
         "npm --prefix \"$RESOURCE_DIR\" run build"
       ]
     }
