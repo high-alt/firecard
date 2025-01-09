@@ -19,7 +19,9 @@ export type CardProps = {
   onClick?: () => void
   img: MediaImgProps
   header: string | React.ReactElement
+  headerProps?: {className?: string}
   subheader: string | React.ReactElement
+  subHeaderProps?: {className?: string}
   className?: string
   btn?: { label: string; href?: string }
   children?: React.ReactNode | React.ReactNode[]
@@ -67,7 +69,6 @@ export const Card = (props: CardProps) => {
 }
 
 export const PricingCard = (props: CardProps & { price: number }) => {
-  const router = useRouter()
   return (
     <div
       onClick={props.onClick}
@@ -102,7 +103,6 @@ export const PricingCard = (props: CardProps & { price: number }) => {
 }
 
 export const FeatureCard = (props: CardProps & { price: number }) => {
-  const router = useRouter()
   return (
     <div
       onClick={props.onClick}
@@ -129,33 +129,27 @@ type PromoCardType = CardProps & { reverse?: boolean }
 
 export const PromoCard = (props: PromoCardType) => {
   return (
-    <div className="relative w-full h-auto p-8 lg:p-0 lg:flex lg:justify-between rounded-[32px] overflow-hidden bg-secondary/10">
+    <div className={"grid md:grid-cols-2 grid-cols-1 w-full h-auto p-8 lg:p-0 lg:flex lg:justify-between rounded-[32px] overflow-hidden" + " " + props.className}>
       <div
-        className={`w-full flex flex-col my-auto items-center lg:w-[50%]   lg:p-0 h-full ${
+        className={`w-full my-auto items-center lg:p-0 h-full ${
           props.reverse ? "order-2" : "order-1"
         }`}
       >
-        <section className="space-y-8 lg:mx-[64px] max-w-[340px] rounded-lg">
+        <div className={"space-y-4 lg:mx-auto rounded-lg p-4 "+ " " + props.headerProps?.className}>
           <h2 className={"t-h3 "}>{props.header}</h2>
-          {props.subheader}
+          <span>{props.subheader}</span>
           <Button
             href="/login"
             className="hover:underline"
             onClick={(e) => e.stopPropagation()}
-          >
-            Learn More
-          </Button>
-        </section>
+          >Learn More</Button>
+        </div>
       </div>
       <div
         className={`hidden lg:block w-full lg:w-[50%] relative ${
           props.reverse ? "order-1" : "order-2"
         }`}
       >
-        <div
-          className={`absolute inset-0 bg-[url('/gift-basket.png')] bg-cover opacity-5`}
-        ></div>
-        <div className={`absolute inset-0 bg-primary opacity-5`}></div>
         <div className="lg:m-[64px] ">
           <Img {...props.img} />
         </div>

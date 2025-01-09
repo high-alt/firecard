@@ -21,10 +21,11 @@ export default (props: Props) => {
         <section className="max-w-[500px] space-y-8 ">
           <h2 className={"t-balance text-primary-dark"}>{props.header}</h2>
           <p>{props.subheader}</p>
-          <div>
-            <Button variant="text" href="#desc">
-              Get started for free today <ChevronRight />
+          <div className="md:space-x-4">
+            <Button href="#desc">
+              Create a Bumblecard
             </Button>
+            <Button variant="outlined" href="#desc">View example</Button>
           </div>
         </section>
       </div>

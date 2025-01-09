@@ -17,7 +17,6 @@ import Link from "next/link"
 import CssBaseline from "@mui/material/CssBaseline"
 import { authLinks, legalLinks } from "utils/routes"
 import {
-  AccountCircle,
   Close,
   Logout,
   LogoutOutlined,
@@ -29,6 +28,8 @@ import Button from "./button"
 import { Router } from "next/router"
 import { UserContext } from "app/app-context"
 import PopupMenu from "./popup-menu"
+import { logoFont } from "utils/fonts"
+import Bee from '../assets/bee.svg'
 
 interface Props {
   links: LinkType[]
@@ -71,6 +72,7 @@ const Nav: React.FC<Props> = (props: Props) => {
         <Button
           className="flex justify-between "
           href={l.path}
+          variant="text"
         >
           <span className="mx-4">
             {l.label}
@@ -99,7 +101,11 @@ const Nav: React.FC<Props> = (props: Props) => {
               </>
             ) : (
               <Link href={"/"}>
-                <img src="/logo.png" alt="" className="h-[38px]" />
+                <div className="flex space-x-1">
+                  <span style={{fontFamily: logoFont.name}}>bumble</span>
+                  <Bee/>
+                  <span style={{fontFamily: logoFont.name}}>card</span>
+                </div>
               </Link>
             )}
             <div className="hidden md:flex ">

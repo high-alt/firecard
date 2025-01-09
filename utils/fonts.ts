@@ -1,5 +1,5 @@
 
-import {  Barrio, Pacifico, Orbitron, Lora, Poppins, Playfair_Display, Oswald, Merriweather, Raleway, Nunito, Happy_Monkey, Rubik_Bubbles, Sour_Gummy, Mystery_Quest } from 'next/font/google'
+import {  Barrio, Pacifico, Orbitron, Lora, Poppins, Playfair_Display, Oswald, Merriweather, Raleway, Nunito, Happy_Monkey, Rubik_Bubbles, Sour_Gummy, Mystery_Quest, Chewy } from 'next/font/google'
 
 const barrio = Barrio({ subsets: ['latin'], weight: ['400'] })
 const lora = Lora({ subsets: ['latin'], weight: ['400', '700'] })
@@ -13,6 +13,9 @@ const raleway = Raleway({ subsets: ['latin'], weight: ['400', '700'] })
 const nunito = Nunito({ subsets: ['latin'], weight: ['400', '700'] })
 const happyMonkey = Happy_Monkey({ subsets: ['latin'], weight: ['400'] })
 const rubikBubble = Rubik_Bubbles({ subsets: ['latin'], weight: ['400'] })
+const chewy = Chewy({subsets:['latin'], weight:['400']})
+
+export const logoFont =  {name: 'Chewy', className: chewy.className}
 
 export type FontType = {name: string, className: string}
 

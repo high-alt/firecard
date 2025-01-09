@@ -57,6 +57,7 @@ const theme = createTheme({
         },
         containedPrimary: {
           color: colours.black.DEFAULT,
+          border:'1px solid #121212',
           ':hover': {
             backgroundColor:darken(colours.primary.DEFAULT, 0.1),
           },
@@ -70,6 +71,7 @@ const theme = createTheme({
           ':hover': {
             backgroundColor:lighten(colours.primary.DEFAULT, 0.8),
           },
+          border:'1px solid #000',
           backgroundColor: colours.white.DEFAULT,
           color: colours.black.DEFAULT,
         },

@@ -10,9 +10,9 @@ export default forwardRef<HTMLButtonElement, Props>((props, ref) => {
       ref={ref}
       variant={
         !!props.href && !props.variant
-          ? "text"
-          : !props.variant
           ? "contained"
+          : !props.variant
+          ? "text"
           : props.variant
       }
       component={!!props.href ? "div" : "button"}
