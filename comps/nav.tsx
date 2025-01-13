@@ -86,7 +86,7 @@ const Nav: React.FC<Props> = (props: Props) => {
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar component="nav">
-          <Toolbar className="justify-between">
+          <Toolbar className="justify-between lg-cont">
             {user?.unique_name ? (
               <>
                 <span className="block text-center md:hidden">

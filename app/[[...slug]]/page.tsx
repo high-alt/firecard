@@ -12,6 +12,7 @@ export default function Home(){
         img={{ src: "/gift-basket.png", alt: "" }}
       />
       <div className="space-y-10 lg-cont h-screen">
+        <h2 className="t-h2 text-primary text-center">Cards that connect, no matter the distance.</h2>
         <PromoCard className="bg-secondary"
           reverse
           header={<>this is a header</>}

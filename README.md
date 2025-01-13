@@ -1,2 +1,10 @@
-// EasyGiver.com
-//bumblecard.com - available
+"Your heartfelt moments, just a click away."
+"Cards that connect, no matter the distance."
+"Celebrating life’s moments, digitally."
+"Expressions of care, delivered instantly."
+"E-cards for every occasion, every emotion."
+"Say it beautifully, say it digitally."
+"Thoughtful greetings, modern convenience."
+"Where every card tells your story."
+"Personalized connections in a digital world."
+"Timeless sentiments, modern delivery."
